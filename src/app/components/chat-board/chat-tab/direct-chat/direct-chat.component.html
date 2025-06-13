@@ -42,7 +42,7 @@
             <ul class="msg-box">
               @for (message of chat.messages; track $index) {
               @if (message.message_type == 'massage') {
-              <li class="msg-setting-main">
+              <li class="msg-setting-main" style="text-align: left;">
                 <h5>{{message.message}}</h5>
                 <div class="badge sm ms-2" [ngClass]="[message.tag === 'R' ? 'badge-success' : '', 
                                       message.tag === 'F' ? 'badge-danger' : '',  
