@@ -1,7 +1,7 @@
 <div class="messages custom-scroll active" 
   [ngClass]="{'active': activeTab === 0 }" id="chating" 
   [style.background-image]="layoutService.config.wallpaper !== '0' &&  getImage(layoutService.config.wallpaper)"
-  style="background-color: transparent; background-blend-mode: unset;">
+  style="background-color: transparent; background-blend-mode: unset; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
     <app-direct-chat></app-direct-chat>
 </div>
 <!-- <div class="messages custom-scroll"  [ngClass]="{'active': activeTab === 1}" id="group_chat" >

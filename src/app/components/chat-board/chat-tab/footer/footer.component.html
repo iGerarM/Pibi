@@ -1,4 +1,4 @@
-<div class="wrap emojis-main">
+<div class="wrap emojis-main gap-3">
   <!-- <button class="icon-btn btn-outline-primary button-effect me-3 toggle-sticker outside" (click)="toggleSticker()">
     <svg-icon src="assets/svg/emoji.svg"></svg-icon>
   </button> -->
@@ -18,7 +18,7 @@
   <!-- <div class="contact-poll" >
     <app-quick-poll></app-quick-poll>
   </div> -->
-  <input class="setemoj" placeholder="Write your message..." [(ngModel)]="message"/>
+  <input class="setemoj" style="width: 100%; background-color: #f3f3f3; padding: 10px; border-radius: 10px;" placeholder="Escribe tu mensaje..." (keyup.enter)="sendMessage()" [(ngModel)]="message"/>
   <!-- <a class="icon-btn btn-outline-primary button-effect me-3 ms-3" >
     <i data-feather="mic"></i>
   </a> -->

@@ -59,7 +59,7 @@ export class ChatMessageService {
         const systemResponses: ChatMessage[] = [
           {
             type: 'receive',
-            name: 'Sistema',
+            name: 'PiBi',
             time: new Date().toLocaleTimeString(),
             messages: [{
               message_type: 'massage',
@@ -69,7 +69,7 @@ export class ChatMessageService {
           },
           {
             type: 'receive',
-            name: 'Sistema',
+            name: 'PiBi',
             time: new Date().toLocaleTimeString(),
             messages: [{
               message_type: 'massage',
@@ -79,7 +79,7 @@ export class ChatMessageService {
           },
           {
             type: 'receive',
-            name: 'Sistema',
+            name: 'PiBi',
             time: new Date().toLocaleTimeString(),
             messages: [{
               message_type: 'massage',
@@ -105,7 +105,7 @@ export class ChatMessageService {
         // Crear y agregar mensaje de error
         const errorResponse: ChatMessage = {
           type: 'receive',
-          name: 'Sistema',
+          name: 'PiBi',
           time: new Date().toLocaleTimeString(),
           messages: [{
             message_type: 'massage',

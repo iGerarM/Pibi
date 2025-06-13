@@ -44,7 +44,7 @@ export class ChatTabComponent implements OnInit,OnDestroy  {
     this.activeChat = {
       profileStatus: "online",
       profileImage: "assets/images/contact/1.jpg",
-      name: "Josephin water",
+      name: "Mirian Alas",
       condition:"Active",
       badge : "success"
     };
@@ -77,7 +77,7 @@ export class ChatTabComponent implements OnInit,OnDestroy  {
       return 'radial-gradient(circle at 10% 20%, rgb(239, 246, 249) 0%, rgb(206, 239, 253) 90%)'
     } else if (wallpaper == 'grediant-6') {
       return 'radial-gradient(circle at 10% 20%, rgb(226, 240, 254) 0%, rgb(255, 247, 228) 90%)'
-    } return `url('assets/images/wallpaper/${wallpaper}.jpg')`
+    } return `url('assets/images/Fondo_WEB_3.svg')`
   }
 
   sendMessage(message: string){
