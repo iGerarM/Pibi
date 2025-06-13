@@ -1,11 +1,11 @@
 import { LayoutService } from './../../../shared/service/layout.service';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { TabService } from '../../../shared/service/left-sidebar/left-sidebar.service';
 import { Subscription } from 'rxjs';
 import { FooterComponent } from './footer/footer.component';
 import { GroupChatComponent } from './group-chat/group-chat.component';
 import { DirectChatComponent } from './direct-chat/direct-chat.component';
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { ChatBoardService } from '../../../shared/service/chat-board/chat-board.service';
 import { ChatMessageService, ChatMessage } from '../../../shared/service/chat-board/chat-message.service';
 
@@ -13,14 +13,17 @@ import { ChatMessageService, ChatMessage } from '../../../shared/service/chat-bo
     selector: 'app-chat-tab',
     templateUrl: './chat-tab.component.html',
     styleUrls: ['./chat-tab.component.scss'],
-    imports: [NgClass, DirectChatComponent, GroupChatComponent, FooterComponent]
+    imports: [NgClass, NgIf, DirectChatComponent, GroupChatComponent, FooterComponent]
 })
-export class ChatTabComponent implements OnInit,OnDestroy  {
+export class ChatTabComponent implements OnInit, OnDestroy, AfterViewChecked {
+  @ViewChild('messageContainer') private messageContainer: ElementRef;
   public activeTab: number = 0;
   public chatData: number;
   public open: boolean = false;
   private subscription: Subscription;
   public activeChat: { profileStatus: string; profileImage: string; name: string; condition: string; badge: string; };
+  public isTyping: boolean = false;
+  private shouldScroll: boolean = false;
 
   constructor(
     private tabService: TabService,
@@ -56,8 +59,23 @@ export class ChatTabComponent implements OnInit,OnDestroy  {
      });
      this.tabService.activeChat$.subscribe((chat) => {
       this.chatData = chat;
+      this.shouldScroll = true;
     });
     this.setDefaultActiveTabData();
+  }
+  
+  ngAfterViewChecked() {
+    if (this.shouldScroll) {
+      this.scrollToBottom();
+      this.shouldScroll = false;
+    }
+  }
+
+  private scrollToBottom(): void {
+    try {
+      const element = this.messageContainer.nativeElement;
+      element.scrollTop = element.scrollHeight;
+    } catch (err) { }
   }
   
   ngOnDestroy(): void {
@@ -93,8 +111,20 @@ export class ChatTabComponent implements OnInit,OnDestroy  {
         }]
       };
       
+      // Mostrar indicador de escritura
+      this.isTyping = true;
+      
       // Enviar mensaje al servicio
-      this.chatMessageService.addMessage(newMessage);
+      this.chatMessageService.addMessage(newMessage).subscribe({
+        next: () => {
+          this.isTyping = false;
+          this.shouldScroll = true;
+        },
+        error: () => {
+          this.isTyping = false;
+          this.shouldScroll = true;
+        }
+      });
       
       // Actualizar el chat actual
       this.tabService.updateChat(newMessage);
