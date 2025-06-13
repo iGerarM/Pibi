@@ -32,7 +32,7 @@
     @for (chat of chatData.chat; track $index) {
     <li [ngClass]="chat.type === 'send' ? 'replies' : 'sent'">
       <div class="media">
-        <div class="profile me-4" [ngStyle]="{'background-image': 'url(' + 'assets/images/contact/2.jpg' + ')'}"
+        <div class="profile me-4" [ngStyle]="{'background-image': chat.type === 'send' ? 'url(assets/images/contact/mujer.png)' : 'url(assets/images/contact/chatbot.png)'}"
           style="background-size: cover; background-position: center center; display: block;">
         </div>
         <div class="media-body">

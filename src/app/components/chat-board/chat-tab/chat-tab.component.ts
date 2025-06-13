@@ -46,7 +46,7 @@ export class ChatTabComponent implements OnInit, OnDestroy, AfterViewChecked {
   setDefaultActiveTabData(): void {
     this.activeChat = {
       profileStatus: "online",
-      profileImage: "assets/images/contact/1.jpg",
+      profileImage: "assets/images/contact/mujer.png",
       name: "Mirian Alas",
       condition:"Active",
       badge : "success"
