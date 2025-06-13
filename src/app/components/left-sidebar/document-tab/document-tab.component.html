@@ -1,0 +1,38 @@
+<div class="theme-title">
+  <div class="media">
+    <div>
+      <h2>Document</h2>
+      <h4>List of document</h4>
+    </div>
+    <div class="media-body text-end">
+      <app-search></app-search>
+      <a class="icon-btn btn-outline-light btn-sm close-panel" (click)="handleClick()">
+        <i data-feather="x"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<ul class="chat-main">
+  @for (file of files; track file) {
+  <li>
+    <div class="chat-box">
+      <div class="media">
+        <div class="profile">
+          <a class="icon-btn btn-outline-{{file.btnColor}} btn-xl pull-right rouded15">
+            <i [ngClass]="getFileIconClass(file.extension)"></i>
+          </a>
+        </div>
+        <div class="details">
+          <h5>{{ file.name }}</h5>
+          <h6>{{ file.date }}</h6>
+        </div>
+        <div class="media-body">
+          <a class="icon-btn btn-outline-light btn-sm pull-right">
+            <i data-feather="download"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

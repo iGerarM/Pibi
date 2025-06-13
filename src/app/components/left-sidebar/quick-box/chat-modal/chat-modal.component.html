@@ -1,0 +1,41 @@
+<ng-template #msgChatModal let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title">Create New Message</h2>
+    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close"
+      (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="chat-msg-search">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Recipient's username"
+          aria-describedby="basic-addon20" />
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon20">&#64;</span>
+        </div>
+      </div>
+    </div>
+    <ul class="chat-main custom-scroll">
+      @for (item of chats; track item) {
+      <li [attr.data-to]="item.status === 'Typing' ? 'chatting' : 'blank'" [class.active]="item.active">
+        <div class="chat-box">
+          <div class="profile {{ item.profileStatus }}"
+            [ngStyle]="{'background-image': 'url(' +  item.profileImage + ')'}"
+            style="background-size: cover; background-position: center center; display: block;"></div>
+          <div class="details">
+            <h5>{{ item.name }}</h5>
+            <h6>{{ item.message }}</h6>
+          </div>
+          <div class="date-status">
+            <i class="ti-pin2"></i>
+            <h6>{{ item.date }}</h6>
+            <h6 class="font-success status">{{ item.status }}</h6>
+          </div>
+        </div>
+      </li>
+      }
+
+    </ul>
+  </div>
+  <ng-template>

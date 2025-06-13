@@ -1,0 +1,19 @@
+<ul class="theme-layout-type">
+    <li [class.active]="layoutService.config.layout === 'active'" (click)="toggleActive('active')">
+      <div class="sidebar"></div>
+      <div class="sidebar-content"></div>
+    </li>
+    <li [class.active]="layoutService.config.layout === 'dark-sidebar'" (click)="toggleActive('dark-sidebar')">
+      <div class="sidebar"></div>
+      <div class="sidebar-content"></div>
+    </li>
+    <li [class.active]="layoutService.config.layout === 'dark'" (click)="toggleActive('dark')">
+      <div class="sidebar"></div>
+      <div class="sidebar-content"></div>
+    </li>
+    <li [class.active]="layoutService.config.layout === 'colorfull'" (click)="toggleActive('colorfull')">
+      <div class="sidebar"></div>
+      <div class="sidebar-content"></div>
+    </li>
+  </ul>
+  

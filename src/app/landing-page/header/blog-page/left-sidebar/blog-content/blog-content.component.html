@@ -1,0 +1,22 @@
+<div class="row blog-media">
+  @for (blog of blogs; track blog) {
+  <div class="col-xl-6 blog-content-mb">
+    <div class="blog-side">
+      <div class="blog-left"><a routerLink="/details"><img class="img-fluid" [src]="blog.image" alt="" /></a></div>
+      <div class="blog-right">
+        <div>
+          <h6>{{ blog.date }}</h6>
+          <a routerLink="/details">
+            <h4>{{ blog.title }}</h4>
+          </a>
+          <ul class="post-social">
+            <li><i class="fa fa-user"> </i>{{ blog.author }}</li>
+            <li><i class="fa fa-comments"></i> {{ blog.comments }} Comment</li>
+          </ul>
+          <p>{{ blog.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

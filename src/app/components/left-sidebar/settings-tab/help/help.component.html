@@ -1,0 +1,40 @@
+<div class="block" [class.open]="isBlockOpen">
+  <div class="media">
+    <div class="media-body">
+      <h3>Help</h3>
+    </div>
+    <div class="media-right">
+      <a class="icon-btn btn-outline-light btn-sm pull-right previous" (click)="toggleBlock()">
+        <i data-feather="chevron-left"></i>
+      </a>
+    </div>
+  </div>
+  <ul class="help">
+    <li>
+      <h5><a >FAQ</a></h5>
+    </li>
+    <li>
+      <h5><a > Contact Us</a></h5>
+    </li>
+    <li>
+      <h5><a >Terms and Privacy Policy</a></h5>
+    </li>
+    <li>
+      <h5><a >Licenses</a></h5>
+    </li>
+    <li>
+      <h5><a >2023 - 24 Powered by Pixelstrap</a></h5>
+    </li>
+  </ul>
+</div>
+<div class="media">
+  <div class="media-body">
+    <h3>Help</h3>
+    <h4>You are Confusion, Tell me</h4>
+  </div>
+  <div class="media-right">
+    <a class="icon-btn btn-outline-light btn-sm pull-right next" (click)="toggleBlock()">
+      <i data-feather="chevron-right"></i>
+    </a>
+  </div>
+</div>

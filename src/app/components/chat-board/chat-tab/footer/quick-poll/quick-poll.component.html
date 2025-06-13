@@ -1,0 +1,47 @@
+<a class="icon-btn btn-outline-primary me-4 outside" (click)="toggleDisplay()" #linkRef>
+  <i class="fa fa-plus"></i>
+</a>
+<div class="contact-poll-content">
+  <ul>
+    <li>
+      <a>
+          <i data-feather="image"></i>gallery
+      </a>
+    </li>
+    <li>
+      <a>
+          <i data-feather="camera"></i>camera
+      </a>
+    </li>
+    <li>
+      <a (click)="codeModal.openModal()">
+          <i data-feather="code"></i>Code Snippet
+      </a>
+      <app-snippet-modal #codeModal></app-snippet-modal>
+    </li>
+    <li>
+      <a><i data-feather="user"></i>contact
+      </a>
+    </li>
+    <li>
+      <a>
+          <i data-feather="map-pin"></i>location
+      </a>
+    </li>
+    <li>
+      <a>
+          <i data-feather="clipboard"></i>document
+      </a>
+    </li>
+    <li>
+      <a (click)="pollModal.openModal()">
+          <i data-feather="bar-chart-2"></i>poll
+      </a>
+      <app-poll-modal #pollModal></app-poll-modal>
+    </li>
+    <li><a>
+      <i data-feather="paperclip"></i>attach
+        </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,9 @@
+<ul>
+  @for (sticker of sticker; track sticker) {
+  <li>
+    <a>
+      <img class="img-fluid" [src]="sticker.src" [alt]="sticker.alt" />
+    </a>
+  </li>
+  }
+</ul>

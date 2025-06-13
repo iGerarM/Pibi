@@ -1,0 +1,58 @@
+<li id="reminder">
+  <div class="reminder-main">
+    <div class="theme-title">
+      <div class="media">
+        <div>
+          <h2>Reminders</h2>
+          <h4>Set reminders</h4>
+        </div>
+        <div class="media-body media-body text-end">
+          <app-close-apps></app-close-apps>
+      </div>
+      </div>
+    </div>
+    <div class="reminder-content tab-card"><i class="ti-alarm-clock"></i>
+      <p>Never forget important tasks. Set personal and group reminders.</p>
+      <a class="setreminder btn btn-primary button-effect btn-sm" (click)="reminderModal.openModal()">set reminder</a>
+      <app-reminder-modal  #reminderModal></app-reminder-modal>
+    </div>
+    <div class="reminder-list-disp">
+      <h5>Themeforest Discussion</h5>
+      <h6>Project Discussion</h6><span>11:22 PM | 15 FAB</span>
+      <ul class="reminder-disp">
+        <li class="reminder-list-toggle">
+          <a class="icon-btn bg-transparent">
+            <i data-feather="more-vertical"></i>
+          </a>
+          <div class="reminder-contentlist-toggle">
+            <ul>
+              <li><a class="icon-btn btn-sm"><i data-feather="trash"></i></a>
+                <h5>Delete</h5>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="reminder-list">
+      <button class="Show-reminder">Show Completed</button>
+      <button class="Hide-reminder">Hide Completed</button>
+      <div class="target-reminder-list">
+        <h5>Session Start</h5>
+        <h6>Project Discussion</h6>
+        <h6>05:22 PM | 1 JAN</h6>
+        <ul class="reminder-disp">
+          <li class="reminder-toggle"><a class="icon-btn bg-transparent"><i data-feather="more-vertical"></i></a>
+            <div class="reminder-content-toggle">
+              <ul>
+                <li><a class="icon-btn btn-sm"><i data-feather="trash"></i></a>
+                  <h5>Delete</h5>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</li>

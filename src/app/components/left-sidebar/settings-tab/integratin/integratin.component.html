@@ -1,0 +1,44 @@
+<div class="block" [class.open]="isBlockOpen">
+  <div class="media">
+    <div class="media-body">
+      <h3>Intelligent</h3>
+    </div>
+    <div class="media-right">
+      <a class="icon-btn btn-outline-light btn-sm pull-right previous" (click)="toggleBlock()">
+        <i data-feather="chevron-left"></i>
+      </a>
+    </div>
+  </div>
+  <ul class="integratin">
+    @for (item of items; track item) {
+    <li>
+      <div class="media">
+        <div class="media-left">
+          <a [class]="item.iconClass">
+            <i class="{{item.icon}}"></i>
+            <a href="{{ item.link }}">
+              <h5>{{ item.name }}</h5>
+            </a>
+          </a>
+        </div>
+        <div class="media-right">
+          <div class="profile" [ngStyle]="{'background-image': 'url(' +  item.image + ')'}"
+            style="background-size: cover; background-position: center center; display: block;"></div>
+        </div>
+      </div>
+    </li>
+    }
+
+  </ul>
+</div>
+<div class="media">
+  <div class="media-body">
+    <h3>Intelligent</h3>
+    <h4>Sync Your Other Social Account</h4>
+  </div>
+  <div class="media-right">
+    <a class="icon-btn btn-outline-light btn-sm pull-right next" (click)="toggleBlock()">
+      <i data-feather="chevron-right"></i>
+    </a>
+  </div>
+</div>

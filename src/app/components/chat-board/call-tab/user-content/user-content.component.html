@@ -1,0 +1,19 @@
+<div class="user-content">
+  <img class="img-fluid" src="assets/images/contact/2.jpg" alt="user-img"/>
+  <h3>Josephin water</h3>
+  <h4 class="mt-2">+0 1800 76855</h4>
+  <ul>
+    <li>
+      <i class="fa fa-twitch"></i>massage
+    <li>
+      <i class="fa fa-phone" (click)="openModal()"></i>
+          voice call
+        <app-audio-modal #audio></app-audio-modal>
+    </li>
+    <li>
+      <i class="fa fa-video-camera" (click)="videoModal()"></i>
+          video call
+      <app-video-modal #video></app-video-modal>
+    </li>
+  </ul>
+</div>

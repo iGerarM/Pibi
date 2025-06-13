@@ -1,0 +1,22 @@
+<ul class="contact-log-main">
+  @for (contact of contact; track contact ; let i = $index) {
+  <li [class.active]="i === activeIndex" (click)="toggleActive(i)">
+    <div class="contact-box">
+      <div [class]="'profile ' + contact.profile" [ngStyle]="{'background-image': 'url(' + contact.imgSrc + ')'}">
+      </div>
+      <div class="details">
+        <h5>{{ contact.name }}</h5>
+        <h6>{{ contact.phone }}</h6>
+      </div>
+      <div class="contact-action">
+        <div class="icon-btn btn-outline-primary btn-sm button-effect">
+          <app-feather-icons [icon]="'phone'"></app-feather-icons>
+        </div>
+        <div class="icon-btn btn-outline-success btn-sm button-effect">
+          <i data-feather="video"></i>
+        </div>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

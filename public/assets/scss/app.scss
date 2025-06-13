@@ -1,0 +1,13 @@
+//bootstrap
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@import "../scss/vendors/font-awesome.scss";
+@import "../scss/vendors/feather-icon";
+@import "../scss/vendors/feather-icon/feather-icon";
+@import "../scss/vendors/themify";
+@import "../scss/vendors/animate.scss";
+@import '@angular/cdk/overlay-prebuilt.css';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@import "./style.scss";

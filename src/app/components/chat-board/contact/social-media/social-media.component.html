@@ -1,0 +1,21 @@
+<div class="social-info-group">
+  <ul class="integratin mt-0">
+    @for (media of socialMedia; track media) {
+    <li>
+      <div class="media">
+        <div class="media-left">
+          <a class="{{media.class}}" href="{{media.link}}">
+            <i class="{{media.icon}}"></i>
+            <h5>{{ media.platform }}</h5>
+          </a>
+        </div>
+        <div class="media-right">
+          <div class="profile bg-size" [style]="{'background-image': 'url(' + media.imageSrc + ')'}"
+            style="background-size: cover; background-position: center center; display: block;">
+          </div>
+        </div>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

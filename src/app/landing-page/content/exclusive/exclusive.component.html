@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="landing-title">
+        <div>
+          <h1>finger tips</h1>
+        </div>
+        <div class="sub-title">
+          <div>
+            <h4>Exclusive Features</h4>
+            <h2>Put collaboration at your fingertips</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="custom-container">
+  <div class="row">
+    <div class="col-12">
+      <div class="collaboration-content">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="collab-tab nav-pills">
+          <li [ngbNavItem]="1">
+            <a ngbNavLink>
+              <div class="tab-main">
+                <div class="tab-img"><i class="ti-thought"></i></div>
+                <div class="tab-content">
+                  <h3>Organise</h3>
+                  <p>conversation</p>
+                </div>
+              </div>
+            </a>
+            <ng-template ngbNavContent>
+              <div class="tab-pane container active" id="tab1"><img class="img-fluid" src="assets/images/landing/finger-tips/main.jpg" alt="tab-detail-img"/></div>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="2">
+            <a ngbNavLink>
+              <div class="tab-main">
+                <div class="tab-img"><i class="ti-zip"></i></div>
+                <div class="tab-content">
+                  <h3>Shared</h3>
+                  <p>file and etc</p>
+                </div>
+              </div>
+            </a>
+            <ng-template ngbNavContent>
+              <div class="tab-pane container active" id="tab1"><img class="img-fluid" src="assets/images/landing/finger-tips/main.jpg" alt="tab-detail-img"/></div>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="3">
+            <a ngbNavLink>
+              <div class="tab-main">
+                <div class="tab-img"><i class="ti-search"></i></div>
+                <div class="tab-content">
+                  <h3>Search</h3>
+                  <p>everything</p>
+                </div>
+              </div>
+            </a>
+            <ng-template ngbNavContent>
+              <div class="tab-pane container active" id="tab1"><img class="img-fluid" src="assets/images/landing/finger-tips/main.jpg" alt="tab-detail-img"/></div>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="4">
+            <a ngbNavLink>
+              <div class="tab-main">
+                <div class="tab-img"><i class="ti-video-camera"></i></div>
+                <div class="tab-content">
+                  <h3>talk in</h3>
+                  <p>video call</p>
+                </div>
+              </div>
+            </a>
+            <ng-template ngbNavContent>
+              <div class="tab-pane container active" id="tab1"><img class="img-fluid" src="assets/images/landing/finger-tips/main.jpg" alt="tab-detail-img"/></div>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+      
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="theme-title">
+  <div class="media">
+    <div>
+      <h2>Contact</h2>
+      <h4>Start talking now</h4>
+    </div>
+    <div class="media-body text-end">
+      <app-search></app-search>
+      <a class="icon-btn btn-outline-light btn-sm close-panel" (click)="handleClick()">
+        <i data-feather="x"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<ul class="chat-main mt-3">
+  @for (chat of chatList; track chat; let i = $index) {
+  <li [class.active]="i === activeIndex" (click)="toggleActive(i)">
+    <div class="chat-box">
+      <div [ngClass]="{profile: true, offline: chat.status === 'offline',
+         online: chat.status === 'online', 
+         unreachable: chat.status === 'unreachable',
+         busy: chat.status === 'busy'  }" [ngStyle]="{'background-image': 'url(' +  chat.avatar + ')'}">
+        >
+      </div>
+      <div class="details">
+        <h5>{{ chat.name }}</h5>
+        <h6>{{ chat.message }}</h6>
+      </div>
+      <div class="date-status">
+        <h6>{{ chat.date }}</h6>
+        <h6
+          [ngClass]="{  'font-success status': chat.status === 'offline' || chat.status === 'online', 'font-dark status': chat.status === 'unreachable','font-danger status': chat.status === 'busy'  }">
+          {{ chat.statusText }}
+        </h6>
+         @if (chat.unreadCount) {
+          <div class="badge badge-primary sm">
+            {{ chat.unreadCount }}
+          </div>
+         }
+      </div>
+    </div>
+  </li>
+  }
+
+</ul>

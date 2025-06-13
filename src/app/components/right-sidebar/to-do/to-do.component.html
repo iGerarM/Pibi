@@ -1,0 +1,47 @@
+<div class="todo-main">
+  <div class="theme-title">
+    <div class="media">
+      <div>
+        <h2>Todo</h2>
+        <h4>to create your task</h4>
+      </div>
+      <div class="media-body media-body text-end">
+        <app-close-apps></app-close-apps>
+      </div>
+    </div>
+  </div>
+  <div class="todo-name">
+    <form class="default-form">
+      <select class="custom-scroll" name="support[support_type]">
+        <option>All Conversations</option>
+        <option>Josephin water</option>
+        <option>Jony Lynetin</option>
+        <option>Sufiya Elija</option>
+        <option>Mukrani Pabelo</option>
+        <option>Jhon Deo</option>
+      </select>
+    </form>
+  </div>
+  <div class="todo-tab theme-tab custom-scroll">
+    <ul class="nav nav-tabs">
+      @for (item of tabItems; track item) {
+      <li class="nav-item">
+        <a class="nav-link button-effect" [class.active]="item.isActive" (click)="toggleActive(item)">{{ item.title
+          }}</a>
+      </li>
+      }
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active show" [class.active]="tabActive('all')" [class.show]="tabActive('all')">
+        <app-to-do-content></app-to-do-content>
+      </div>
+      <div class="tab-pane fade" [class.active]="tabActive('my-todo')" [class.show]="tabActive('my-todo')">
+        <div class="converstaion-docs tab-card"><i class="sticky-note-o"></i>
+          <h5 class="mb-3">No Open To-Dos Here</h5>
+          <a class="btn btn-primary btn-sm" (click)="todoModal.openModal()">Create A To-Do</a>
+          <app-todo-modal #todoModal></app-todo-modal>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

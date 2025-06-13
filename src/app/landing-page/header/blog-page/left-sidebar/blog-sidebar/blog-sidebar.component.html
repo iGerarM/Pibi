@@ -1,0 +1,62 @@
+<div class="blog-sidebar">
+  <div class="blog-card">
+    <h4>search</h4>
+    <div class="blog-search">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="search in blog" />
+        <span class="ms-0"><i class="fa fa-search"></i></span>
+      </div>
+    </div>
+  </div>
+  <div class="blog-card">
+    <h4>follow us</h4>
+    <ul class="blog-follow">
+      <li><a href="https://en-gb.facebook.com/login/"><i class="fa fa-facebook-square"></i></a></li>
+      <li><a href="https://twitter.com/LOGIN"><i class="fa fa-twitter"></i></a></li>
+      <li><a href="https://www.instagram.com/accounts/login/"><i class="fa fa-instagram"></i></a></li>
+      <li><a href="https://www.skype.com/en/"><i class="fa fa-skype"></i></a></li>
+      <li><a href="https://www.linkedin.com/login"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+  </div>
+  <div class="blog-card">
+    <h4>Recent Blog</h4>
+    <ul class="recent-blog">
+      @for (blog of recentBlogs; track blog) {
+      <li>
+        <div class="media">
+          <img class="img-fluid blur-up lazyload" [src]="blog.imagePath" alt="Generic placeholder image" />
+          <div class="media-body align-self-center">
+            <h5>{{ blog.date }}</h5>
+            <p>{{ blog.hits }}</p>
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="blog-card">
+    <h4>Popular Blog</h4>
+    <ul class="popular-blog">
+      @for (blog of popularBlogs; track blog) {
+      <li>
+        <div class="media">
+          <div class="blog-date">
+            <h3>{{ blog.date }}</h3>
+          </div>
+          <div class="media-body align-self-center">
+            <h5>{{ blog.title }}</h5>
+            <p>{{ blog.content }}</p>
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="blog-card">
+    <ul class="tags">
+      @for (tag of tags; track tag) {
+      <li><a>{{ tag }}</a></li>
+      }
+    </ul>
+  </div>
+</div>

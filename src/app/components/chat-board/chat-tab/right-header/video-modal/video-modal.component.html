@@ -1,0 +1,48 @@
+<ng-template #videoModal let-modal>
+  <div class="modal-body">
+    <div class="videocall call-modal" style="background-image: url('assets/images/avtar/big/videocall_bg.jpg'); background-size: cover; background-position: center center; display: block;">
+      <div class="small-image">
+        <img class="bg-img" src="assets/images/avtar/big/videocall.jpg" alt="Avatar"/>
+      </div>
+      <div class="media videocall-details">
+        <div class="usersprof">
+          <div class="profile">
+            <img class="bg-img rounded-circle" src="assets/images/avtar/2.jpg" alt="Avatar"/>
+          </div>
+          <div class="profile">
+            <img class="bg-img rounded-circle" src="assets/images/avtar/3.jpg" alt="Avatar"/>
+          </div>
+        </div>
+        <div class="media-body">
+          <h5>Josephin water</h5>
+          <h6>America ,California</h6>
+        </div>
+        <div id="basicUsage">00:00:00</div>
+        <div class="zoomcontent">
+          <a class="text-dark">
+            <img src="assets/images/logo/maximize.svg" alt="zoom screen"/>
+          </a>
+        </div>
+      </div>
+      <div class="center-con text-center">
+        <ul>
+          <li>
+            <a class="icon-btn btn-light button-effect pause" >
+              <i class="ti-control-pause"></i>                
+            </a>
+          </li>
+          <li>
+            <a class="icon-btn btn-danger button-effect btn-xl is-animating"  (click)="modal.dismiss('Cross click')"> 
+              <app-feather-icons [icon]="'phone'"></app-feather-icons>                
+            </a>
+          </li>
+          <li>
+            <a class="icon-btn btn-light button-effect mic">
+              <i class="fa fa-microphone"></i>                
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-template>

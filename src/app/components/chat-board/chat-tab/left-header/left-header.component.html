@@ -1,0 +1,15 @@
+<ul>
+  <li>
+    <a class="icon-btn btn-light button-effect mute" (click)="toggleOff()">
+      <i class="fa fa-volume-up" [class.off]="isOff"></i>
+    </a>
+  </li>
+  <li>
+    <app-search></app-search>
+  </li>
+  <li>
+    <a class="icon-btn btn-light button-effect mobile-sidebar" (click)="close()">
+      <i data-feather="chevron-left"></i>
+    </a>
+  </li>
+</ul>

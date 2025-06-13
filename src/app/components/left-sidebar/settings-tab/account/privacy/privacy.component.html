@@ -1,0 +1,22 @@
+<div class="card-header" id="headingOne">
+  <a>Privacy
+    <i class="fa fa-angle-down" (click)="toggle()"></i>
+  </a>
+</div>
+<div [class.show]="show" class="collapse">
+  <div class="card-body">
+    <ul class="privacy">
+      @for (privacy of privacy; track privacy) {
+      <li>
+        <h5>{{ privacy.title }}</h5>
+        <div class="form-check form-switch custom-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        </div>
+        <p>
+          <b>Note : </b>{{ privacy.note }}
+        </p>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

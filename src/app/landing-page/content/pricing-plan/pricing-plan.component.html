@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="landing-title">
+        <div>
+          <h1>pricing plan</h1>
+        </div>
+        <div class="sub-title">
+          <div>
+            <h4>Choose Your Pricing Plan</h4>
+            <h2>Affordable for everyone!</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="custom-container">
+  <div class="row">
+    <div class="col-12">
+      <div class="price-slider">
+        <owl-carousel-o [options]="customOptions">
+          @for (item of items; track item) {
+          <ng-template carouselSlide>
+            <div class="item">
+              <div class="pricing-box">
+                <div>
+                  <div class="pricing-icon"><img class="img-fluid" [src]="item.icon" alt="pricing-plan" /></div>
+                  <div class="pricing-content">
+                    <h2>{{ item.title }}</h2>
+                    <h4>{{ item.price }} | {{ item.description }}</h4>
+                    <a class="btn pricing-btn">get started</a>
+                  </div>
+                  <ul class="avb-price">
+                    @for (feature of item.features; track feature) {
+                    <li>
+                      <i class="fa fa-check"></i>{{ feature }}
+                    </li>
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="block" [class.open]="isBlockOpen"   >
+  <div class="media">
+    <div class="media-body">
+      <h3>Chat</h3>
+    </div>
+    <div class="media-right">
+      <a class="icon-btn btn-outline-light btn-sm pull-right previous" (click)="toggleBlock()">
+        <i data-feather="chevron-left"></i>      
+      </a>
+    </div>
+  </div>
+  <ul class="help">
+    <li>
+      <h5>Chat Backup</h5>
+      <ul class="switch-list">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
+          <h5 class="form-check-label" for="flexSwitchCheckDefault">Auto Backup</h5>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <h5 class="form-check-label" for="flexSwitchCheckDefault">Include document</h5>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <h5 class="form-check-label" for="flexSwitchCheckDefault">Include video</h5>
+        </div>
+      </ul>
+    </li>
+    <li>
+      <h5>Chat wallpaper</h5>
+      <ul class="wallpaper d-flex gap-1">
+        <li
+        class="bg-size"
+        [class.active]="layoutService.config.wallpaper == '2'"
+        (click)="selectWallpaper('2')"
+        style=" background-image: url('/assets/images/wallpaper/2.jpg'); background-size: cover; background-position: center center; display: block;">
+        <img class="bg-img" src="assets/images/wallpaper/2.jpg" alt="Avatar" style="display: none"/>
+      </li>
+      <li
+        class="bg-size"
+        [class.active]="layoutService.config.wallpaper == '3'"
+        (click)="selectWallpaper('3')"
+        style=" background-image: url('/assets/images/wallpaper/3.jpg'); background-size: cover; background-position: center center; display: block;" >
+        <img class="bg-img" src="assets/images/wallpaper/3.jpg" alt="Avatar" style="display: none"/>
+      </li>
+      <li
+        class="bg-size"
+        (click)="selectWallpaper('4')"
+        [class.active]="layoutService.config.wallpaper == '4'"
+        style=" background-image: url('/assets/images/wallpaper/4.jpg'); background-size: cover; background-position: center center; display: block;">
+        <img class="bg-img" src="assets/images/wallpaper/4.jpg" alt="Avatar" style="display: none" />
+      </li>
+      <li
+        class="bg-size"
+        (click)="selectWallpaper('5')"
+        [class.active]="layoutService.config.wallpaper == '5'"
+        style=" background-image: url('/assets/images/wallpaper/5.jpg'); background-size: cover; background-position: center center; display: block;">
+        <img class="bg-img" src="assets/images/wallpaper/5.jpg" alt="Avatar" style="display: none" />
+      </li>
+      <li
+        class="bg-size"
+        (click)="selectWallpaper('1')"
+        [class.active]="layoutService.config.wallpaper == '1'"
+        style=" background-image: url('/assets/images/wallpaper/1.jpg'); background-size: cover; background-position: center center; display: block;" >
+        <img class="bg-img" src="assets/images/wallpaper/1.jpg" alt="Avatar" style="display: none"/>
+      </li>
+      </ul>
+    </li>
+    <li>
+      <h5><a >Archive all chat</a></h5>
+    </li>
+    <li>
+      <h5><a > Clear all chats</a></h5>
+    </li>
+    <li>
+      <h5><a class="font-danger" >Delete all chats</a></h5>
+    </li>
+  </ul>
+</div>
+<div class="media">
+  <div class="media-body">
+    <h3>Chat</h3>
+    <h4>Control Your Chat Backup</h4>
+  </div>
+  <div class="media-right">
+    <a class="icon-btn btn-outline-light btn-sm pull-right next" (click)="toggleBlock()">
+      <i data-feather="chevron-right"></i> 
+    </a>      
+    </div>
+</div>

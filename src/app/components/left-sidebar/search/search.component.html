@@ -1,0 +1,9 @@
+<a class="icon-btn btn-outline-light btn-sm search m-r-15"(click)="openSearch()">
+  <i data-feather="search"></i>
+</a>
+<form class="form-inline search-form" [class.open]="open">
+   <div class="form-group">
+     <input class="form-control-plaintext" type="search" placeholder="Search.." [class.open]="open"/>
+   <div class="icon-close close-search" (click)="closeSearch()"></div>
+ </div>
+</form>

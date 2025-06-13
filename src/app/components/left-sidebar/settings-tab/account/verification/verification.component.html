@@ -1,0 +1,23 @@
+<div class="card-header" id="headingThree">
+  <a>Two Step verification
+    <i class="fa fa-angle-down" (click)="toggle()"></i>
+  </a>
+</div>
+<div [class.show]="show" class="collapse" id="collapseThree">
+  <div class="card-body">
+    <div class="media">
+      <div class="media-body">
+        <h5>Enable</h5>
+      </div>
+      <div class="media-right">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        </div>        
+      </div>
+    </div>
+    <p>
+      <b>Note : </b>For added security, enable two-step verification, which will
+      require a PIN when registering your phone number with Chitchat again.
+    </p>
+  </div>
+</div>

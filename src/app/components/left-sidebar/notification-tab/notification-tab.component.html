@@ -1,0 +1,32 @@
+<div class="theme-title">
+  <div class="media">
+    <div>
+      <h2>Notification</h2>
+      <h4>List of notification</h4>
+    </div>
+    <div class="media-body text-end">
+      <a class="icon-btn btn-outline-light btn-sm close-panel" (click)="handleClick()">
+        <i data-feather="x"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<ul class="chat-main">
+  @for (chatItem of chatItems; track chatItem) {
+  <li>
+    <div class="chat-box notification">
+      <div class="profile" [ngClass]="chatItem.status"
+        [ngStyle]="{'background-image': 'url(' +  chatItem.avatar + ')'}">
+      </div>
+      <div class="details">
+        <span>{{ chatItem.name }}</span>
+        <h5>{{ chatItem.notification.title }}</h5>
+        <p>{{ chatItem.notification.message }}</p>
+      </div>
+      <div class="date-status">
+        <h6>{{ chatItem.date }}</h6>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

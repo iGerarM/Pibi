@@ -1,0 +1,91 @@
+<div class="theme-tab">
+  <ul class="nav nav-tabs">
+    @for (chatTab of chatTab; track chatTab ; let i = $index) {
+    <li class="nav-item">
+      <a class="nav-link button-effect" [class.active]="chatTab.active" (click)="toggleActiveTab(chatTab)"
+        (click)="setActiveTab(i)">
+        {{ chatTab.label }}
+      </a>
+    </li>
+    }
+
+  </ul>
+  <div class="tab-content" id="myTabContent1">
+    @for (chatTab of chatTab; track chatTab) {
+    <div class="tab-pane fade" [ngClass]="{'show active': chatTab.active}" [id]="chatTab.id" role="tabpanel">
+      @if (chatTab.id === 'direct') {
+      <div class="chat-main">
+        <ul>
+          @for (chat of chats; track chat) {
+          <li [ngClass]="{'active': chat.active}" (click)="toggleActive(chat)" (click)="toggleChat(chat)">
+            <div class="chat-box">
+              <div class="profile" [ngClass]="chat.profileStatus"
+                [ngStyle]="{'background-image': 'url(' +  chat.profileImage + ')'}">
+              </div>
+              <div class="details">
+                <h5>{{ chat.name }}</h5>
+                <h6>{{ chat.message }}</h6>
+              </div>
+              <div class="date-status">
+                <i class="ti-pin2"></i>
+                <h6>{{ chat.date }}</h6>
+                <h6 [ngClass]="chat.statusClass">{{ chat.status }}</h6>
+                @if (chat.unreadCount > 0) {
+                <div class="badge badge-primary sm">{{ chat.unreadCount }}</div>
+                }
+              </div>
+            </div>
+          </li>
+          }
+        </ul>
+      </div>
+      }
+      @if (chatTab.id === 'group') {
+      <div class="tab-pane fade" [ngClass]="{'show active': chatTab.active}" [id]="chatTab.id" role="tabpanel">
+        <div class="search2">
+          <div>
+            <div class="input-group">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="fa fa-search"></i>
+                </span>
+              </div>
+              <input class="form-control" type="text" placeholder="Start Chat" />
+            </div>
+          </div>
+        </div>
+        <ul class="group-main">
+          @for (group of groups; track group) {
+          <li [class.active]="group.active" (click)="toggleGroup(group)" (click)="toggle(group)">
+            <div class="group-box">
+              <div class="profile" [ngStyle]="{'background-image': 'url(' +  group.profileImage + ')'}">
+              </div>
+              <div class="details">
+                <h5>{{ group.name }}</h5>
+                <h6>{{ group.description }}</h6>
+              </div>
+              <div class="date-status">
+                <ul class="grop-icon">
+                  @for (member of group.members; track member) {
+                  <li>
+                    <a class="group-tp">
+                      <img [src]="member.profileImage" alt="group-icon-img" />
+                    </a>
+                  </li>
+                  }
+                  <li>+ {{ group.memberCount }}</li>
+                </ul>
+                @if (group.unreadCount > 0) {
+                <div class="badge badge-primary">{{ group.unreadCount }}</div>
+                }
+              </div>
+            </div>
+          </li>
+          }
+        </ul>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div>

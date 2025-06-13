@@ -1,0 +1,39 @@
+<ng-template #callModal let-modal>
+  <div class="modal-header">
+    <h2 class="modal-title">Create New Message</h2>
+    <button class="close" type="button" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="chat-msg-search">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search" />
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon20">&#64;</span>
+        </div>
+      </div>
+    </div>
+    <ul class="call-log-main custom-scroll">
+      @for (call of callLogs; track call) {
+      <li [class.active]="call.active">
+        <div class="call-box">
+          <div class="profile" [class.offline]="call.status === 'offline'" [class.online]="call.status === 'online'"
+            [ngStyle]="{'background-image': 'url(' +  call.imgSrc + ')'}"
+            style="background-size: cover; background-position: center center; display: block;">
+          </div>
+          <div class="details">
+            <h5>{{ call.name }}</h5>
+            <h6><app-feather-icons [icon]="call.arrowIcon"></app-feather-icons>{{ call.time }}</h6>
+          </div>
+          <div class="call-status">
+            <div class="icon-btn btn-outline-success button-effect btn-sm">
+              <i [class.missed]="call.callIcon === 'missed'" [attr.data-feather]="call.callIcon"></i>
+            </div>
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
+  <ng-template>

@@ -1,0 +1,43 @@
+<div class="notes-main">
+  <div class="theme-title">
+    <div class="media">
+      <div>
+        <h2>Notes</h2>
+        <h4>Notes List</h4>
+      </div>
+      <div class="media-body media-body text-end">
+        <app-close-apps></app-close-apps>
+      </div>
+    </div>
+  </div>
+  <form class="default-form">
+    <div class="form-group notes-content">                    
+      <select> 
+        <option>Contact Or Channel</option>
+        <option>Weekdays (Mon-Fri)</option>
+        <option>Daily</option>
+        <option>Weekly (Custom)</option>
+      </select>
+      <ul>
+        <li><a class="icon-btn btn-light button-effect btn-sm" (click)="notesModal.openModal()">
+          <app-feather-icons [icon]="'plus'"></app-feather-icons>
+        </a>
+        <app-notes-modal #notesModal></app-notes-modal>
+      </li>
+      </ul>
+    </div>
+  </form>
+  <div class="notes-list">
+    <h6 class="mb-2 text-muted">Joshephin Water.10 Jan</h6>
+    <div class="media"><img class="img-fluid me-3" src="assets/images/file_icons/5.png" alt="media-img"/>
+      <div class="media-body">
+        <h5 class="mt-0">Joshephin Water</h5>
+      </div>
+    </div>
+    <h5 class="mb-2">Imporatnt project link</h5>
+    <h6 class="mb-2">Please start testing task of your projects.</h6>
+    <div class="forward-main">
+      <a class="line mail-forward">Forward</a>
+    </div>
+  </div>
+</div>

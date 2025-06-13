@@ -1,0 +1,9 @@
+<div class="emojis-sub-contain custom-scroll">
+  @if (emojis) {
+  <ul>
+    @for (emoji of emojis; track emoji) {
+    <li>{{ emoji.emoji }}</li>
+    }
+  </ul>
+  }
+</div>

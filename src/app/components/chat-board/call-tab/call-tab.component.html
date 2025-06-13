@@ -1,0 +1,37 @@
+<a class="icon-btn btn-outline-primary button-effect mobile-back mb-3">
+  <i class="ti-angle-left"></i>
+</a>
+<div class="row">
+  <div class="col-sm-5">
+    <div class="user-profile mb-3">
+      <app-user-content></app-user-content>
+    </div>
+    <div class="user-profile">
+      <app-shared-document></app-shared-document>
+    </div>
+  </div>
+  <div class="col-sm-7">
+    <div class="call-log-main custom-scroll">
+      @for (log of callLogs; track log) {
+      <div class="coll-log-group">
+        <div class="log-content-left">
+          <div class="media">
+            <i [attr.data-feather]="log.type === 'incoming' ? 'phone-incoming' : 'phone-missed'"></i>
+            <div class="media-body">
+              <h5>{{ log.type === 'incoming' ? 'incoming call' : 'missed call' }}</h5>
+            </div>
+          </div>
+        </div>
+        <div class="log-content-right">
+          <h6>{{ log.time }} &nbsp;({{ log.date }})</h6>
+        </div>
+      </div>
+      }
+
+    </div>
+    <div class="call-log-clear">
+      <i class="ti-trash font-danger"></i>
+      <span class="font-danger">Delete call log</span>
+    </div>
+  </div>
+</div>

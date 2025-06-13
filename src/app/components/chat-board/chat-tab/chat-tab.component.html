@@ -1,0 +1,12 @@
+<div class="messages custom-scroll active" 
+  [ngClass]="{'active': activeTab === 0 }" id="chating" 
+  [style.background-image]="layoutService.config.wallpaper !== '0' &&  getImage(layoutService.config.wallpaper)"
+  style="background-color: transparent; background-blend-mode: unset;">
+    <app-direct-chat></app-direct-chat>
+</div>
+<!-- <div class="messages custom-scroll"  [ngClass]="{'active': activeTab === 1}" id="group_chat" >
+  <app-group-chat></app-group-chat>
+</div> -->
+<div class="message-input" style="width: 100%;">
+  <app-footer (outputMessage)="sendMessage($event)"></app-footer>
+</div>

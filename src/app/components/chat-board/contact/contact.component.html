@@ -1,0 +1,29 @@
+<div class="contact-sub-content">
+  <a class="icon-btn btn-outline-primary button-effect mobile-back mb-3">
+    <i class="ti-angle-left"></i>
+  </a>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="user-profile">
+        <app-user-content></app-user-content>
+      </div>
+      <div class="personal-info-group">
+        <app-social-media></app-social-media>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="personal-info-group">
+        <h3>contact info</h3>
+        <ul class="basic-info">
+          @for (info of contactInfo; track info) {
+          <li>
+            <h5>{{ info.label }}</h5>
+            <h5 class="details">{{ info.value }}</h5>
+          </li>
+          }
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

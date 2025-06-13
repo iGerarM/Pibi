@@ -1,0 +1,14 @@
+<div class="card-header" id="headingSix">
+  <a>Delete My account
+    <i class="fa fa-angle-down" (click)="toggle()"></i>
+  </a>
+</div>
+<div [class.show]="show" class="collapse">
+  <div class="card-body">
+    <a class="p-0 req-info font-danger">Delete Account </a>
+    <p>
+      <b>Note :</b>Deleting your account will delete your account info, profile
+      photo, all groups & chat history.
+    </p>
+  </div>
+</div>

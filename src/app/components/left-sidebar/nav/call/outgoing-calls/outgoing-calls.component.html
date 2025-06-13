@@ -1,0 +1,21 @@
+<ul class="call-log-main">
+  @for (call of outgoingCalls; track call ; let i = $index) {
+  <li [class.active]="i === activeIndex" (click)="toggleActive(i)">
+    <div class="call-box">
+      <div [ngClass]="{'profile': true, 
+        'offline': call.profile === 'offline', 
+        'online': call.profile === 'online'}" [ngStyle]="{'background-image': 'url(' + call.imgSrc + ')'}">
+      </div>
+      <div class="details">
+        <h5>{{ call.name }}</h5>
+        <h6><span>{{ call.arrow }}</span>{{ call.time }}</h6>
+      </div>
+      <div class="call-status">
+        <div class="icon-btn btn-outline-success button-effect btn-sm">
+          <i data-feather="video"></i>
+        </div>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

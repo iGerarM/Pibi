@@ -1,0 +1,25 @@
+<div class="profile-box">
+  <div class="media" [class.open]="open">
+    <div class="profile" [ngStyle]="{'background-image': 'url(' +  'assets/images/contact/2.jpg' + ')'}">
+    </div>
+    <div class="details">
+      <h5>{{ username }}</h5>
+      <h6>{{ address }}</h6>
+    </div>
+    <div class="details edit">
+      <form class="form-radious form-sm">
+        <div class="form-group mb-2">
+          <input class="form-control" type="text" name="username" [(ngModel)]="editedUsername"/>
+        </div>
+        <div class="form-group mb-0">
+          <input class="form-control" type="text" name="address" [(ngModel)]="editedAddress"/>
+        </div>
+      </form>
+    </div>
+    <div class="media-body">
+      <a class="icon-btn btn-outline-light btn-sm pull-right edit-btn" (click)="toggleEditMode()">
+        <i data-feather="edit"></i>      
+      </a>
+    </div>
+  </div>
+</div>

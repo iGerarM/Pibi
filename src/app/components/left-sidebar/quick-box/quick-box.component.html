@@ -1,0 +1,24 @@
+<li>
+  <a (click)="msgChatModal.openModal()"><span>new chat</span>
+    <div class="icon-btn btn-outline-primary button-effect btn-sm">
+       <app-feather-icons [icon]="'message-square'"></app-feather-icons>
+    </div>
+  </a>
+  <app-chat-modal #msgChatModal ></app-chat-modal>
+</li>
+<li>
+  <a (click)="callModal.openModal()"><span>new call</span>
+    <div class="icon-btn btn-outline-success button-effect btn-sm">
+      <app-feather-icons [icon]="'phone'"></app-feather-icons>
+    </div>
+  </a>
+  <app-call-modal #callModal></app-call-modal>
+</li>
+<li>
+  <a (click)="openModal()"><span>New Contact</span>
+    <div class="icon-btn btn-outline-danger button-effect btn-sm">
+      <i data-feather="users"></i>
+    </div>
+  </a>
+  <app-add-favorite #addFavorite></app-add-favorite>
+</li>

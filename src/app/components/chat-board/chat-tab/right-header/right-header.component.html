@@ -1,0 +1,22 @@
+<ul class="calls text-end">
+  <li>
+    <a class="icon-btn btn-light button-effect" (click)="audioModal.openModal()"  ngbTooltip="Quick audio call">
+      <app-feather-icons [icon]="'phone'"></app-feather-icons>
+    </a>
+      <app-audio-modal #audioModal></app-audio-modal>
+  </li>
+  <li>
+    <a class="icon-btn btn-light button-effect" (click)="videoModal.openModal()"  ngbTooltip="Quick video call">
+      <i data-feather="video"></i>
+    </a>
+        <app-video-modal #videoModal></app-video-modal>
+  </li>
+  <li>
+    <a class="icon-btn btn-light button-effect apps-toggle" (click)="mainNavService.closeApp()"  ngbTooltip="All Apps">
+      <i class="icon-layout-grid2"></i>
+    </a>
+  </li>
+  <li class="chat-friend-toggle">
+    <app-quick-content></app-quick-content>
+  </li>
+</ul>

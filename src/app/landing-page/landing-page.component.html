@@ -1,0 +1,11 @@
+<div [ngClass]="url === '/' ? 'theme-landing'  : 'inner-page' ">
+  <app-header></app-header> 
+  @if (url !== '/') {
+    <app-breadcrumb [title]="url.substring(1) | titlecase" [items]="['Home']"
+    [active_item]="url.substring(1) | titlecase">
+  </app-breadcrumb>
+  }
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<app-tap-to-top></app-tap-to-top>

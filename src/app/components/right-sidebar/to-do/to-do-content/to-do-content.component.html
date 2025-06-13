@@ -1,0 +1,34 @@
+<div class="tab-card text-start">
+  @for (task of todoTasks; track task) {
+  <div class="todo-task">
+    <h4>{{ task.title }}</h4>
+    <div class="todo-main-content">
+      <div class="input-text">
+        <input type="checkbox" aria-label="Checkbox for following text input" />
+        <input type="text" name="todo-text" [placeholder]="task.placeholder" />
+      </div>
+      <div class="drop-picker">
+        <div class="dropdown currency" tabindex="1">
+          <div class="select" (click)="toggle(task)"><span>Assign To</span></div>
+          <input type="hidden" name="currency" />
+          <ul class="dropdown-menu pt-0" [class.show]="task.toggle">
+            <li class="dropdown-divider">
+              <div class="user"></div>
+              <h5 class="text-muted">Assign To</h5>
+            </li>
+            @for (assignee of task.assignees; track assignee) {
+            <li><a>{{ assignee }}</a></li>
+            }
+          </ul>
+        </div>
+        <input type="date" class="datepicker-here form-control digits shadow-none"
+          [placeholder]="task.dueDatePlaceholder" />
+      </div>
+    </div>
+    <div class="todo-list">
+      <div class="element" id="div_{{ task.id }}"><span class="add add-to-do">Add-To-Do</span></div>
+    </div>
+  </div>
+  }
+
+</div>

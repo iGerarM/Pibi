@@ -1,0 +1,29 @@
+<div class="wrap emojis-main">
+  <!-- <button class="icon-btn btn-outline-primary button-effect me-3 toggle-sticker outside" (click)="toggleSticker()">
+    <svg-icon src="assets/svg/emoji.svg"></svg-icon>
+  </button> -->
+  <!-- <div class="sticker-contain" [class.open]="open" >
+    <div class="sticker-sub-contain custom-scroll">
+      <app-sticker></app-sticker>
+    </div>
+  </div> -->
+  <!-- <div class="emojis-contain" [class.open]="isOpen" >
+    <app-emoji></app-emoji>
+  </div> -->
+  <div class="dot-btn dot-primary me-3 d-none">
+    <a class="icon-btn btn-outline-primary button-effect toggle-emoji" [class.active]="isOpen" (click)="toggleEmoji()">
+      <app-feather-icons [icon]="'smile'"></app-feather-icons>
+    </a>
+  </div>
+  <!-- <div class="contact-poll" >
+    <app-quick-poll></app-quick-poll>
+  </div> -->
+  <input class="setemoj" placeholder="Write your message..." [(ngModel)]="message"/>
+  <!-- <a class="icon-btn btn-outline-primary button-effect me-3 ms-3" >
+    <i data-feather="mic"></i>
+  </a> -->
+  <button class="submit icon-btn btn-primary" (click)="sendMessage()">
+    <i data-feather="send"></i>
+  </button>
+</div>
+

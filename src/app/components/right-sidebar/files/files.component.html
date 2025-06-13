@@ -1,0 +1,33 @@
+<div class="theme-title">
+  <div class="media">
+    <div>
+      <h2>Files</h2>
+      <h4>Shared Media</h4>
+    </div>
+    <div class="media-body media-body text-end">
+      <app-close-apps></app-close-apps>
+    </div>
+  </div>
+</div>
+<div class="theme-tab">
+  <ul class="nav nav-tabs">
+    @for (item of navItems; track item;let i = $index) {
+    <li class="nav-item" (click)="toggleActive(i)">
+      <a class="nav-link button-effect" [class.active]="item.active">{{ item.label }}</a>
+    </li>
+    }
+  </ul>
+</div>
+<div class="file-tab">
+  <div class="tab-content custom-scroll">
+    <div class="tab-pane active" [class.active]="tabActive('media')">
+      <app-media></app-media>
+    </div>
+    <div class="tab-pane fade" [class.active]="tabActive('link')" [class.show]="tabActive('link')">
+      <app-link></app-link>
+    </div>
+    <div class="tab-pane fade" [class.active]="tabActive('docs')" [class.show]="tabActive('docs')">
+      <app-doc></app-doc>
+    </div>
+  </div>
+</div>

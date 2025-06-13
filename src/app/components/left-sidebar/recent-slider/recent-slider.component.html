@@ -1,0 +1,18 @@
+<div class="recent-slider recent-chat owl-carousel owl-theme owl-loaded owl-drag">
+  <owl-carousel-o [options]="customOptions">
+    @for (item of items; track $index) {
+    <ng-template carouselSlide>
+      <div class="item">
+        <div class="recent-box">
+          <div class="dot-btn " [ngClass]="item.dotColor + ' grow'"></div>
+          <div class="recent-profile" [ngClass]="{ 'online': item.isOnline }"
+            [ngStyle]="{'background-image': 'url(' +  item.imageSrc + ')'}"
+            style="background-size: cover; background-position: center center; display: block;">
+            <h6>{{ item.name }}</h6>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
+</div>

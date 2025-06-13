@@ -1,0 +1,22 @@
+<ul class="call-log-main">
+  @for (log of callLogs; track log;let i = $index) {
+  <li [class.active]="i === activeIndex" (click)="toggleActive(i)">
+    <div class="call-box">
+      <div class="profile {{ log.profile }}" [ngStyle]="{'background-image': 'url(' + log.imgSrc + ')'}">
+      </div>
+      <div class="details">
+        <h5>{{ log.name }}</h5>
+        <h6>
+          <app-feather-icons [icon]="'arrow-down-left'"></app-feather-icons>
+          {{ log.time }}
+        </h6>
+      </div>
+      <div class="call-status">
+        <div class="icon-btn btn-outline-success button-effect btn-sm">
+          <app-feather-icons [icon]="'phone'"></app-feather-icons>
+        </div>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

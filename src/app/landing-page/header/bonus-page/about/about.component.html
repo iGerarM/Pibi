@@ -1,0 +1,114 @@
+<div>
+  <ul class="page-decore">
+    <li class="top"><img class="img-fluid inner2" src="../assets/images/landing/footer/2.png" alt="footer-back-img">
+    </li>
+    <li class="bottom"><img class="img-fluid inner2" src="../assets/images/landing/footer/2.png" alt="footer-back-img">
+    </li>
+  </ul>
+  <section class="about-page section-py-space">
+    <div class="custom-container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2 text-center"><img class="img-fluid w-100 pb-4"
+            src="../assets/images/about/1.jpg" alt="about">
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+              <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and
+                demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the
+                pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty
+                through weakness of will, which is the same as saying through shrinking from toil and pain. These cases
+                are perfectly simple and easy to distinguish.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-py-space team-slider-nav">
+    <div class="custom-container testimonial-main">
+      <div class="row">
+        <div class="col-12">
+          <owl-carousel-o [options]="customOptions">
+            @for (item of testimonialItems; track item) {
+            <ng-template carouselSlide>
+              <div class="item">
+                <div class="testimonial-box mt-0">
+                  <div class="test-img"><img class="img-fluid" [src]="item.img" alt="test-img" /><i
+                      class="test-wish fa fa-heart"></i></div>
+                  <div class="test-contain">
+                    <h4>{{ item.position }}</h4>
+                    <h3>{{ item.company }}</h3>
+                    <h6>{{ item.text }}</h6>
+                    <ul class="test-icon">
+                      <li><a href="https://www.google.com/"><img class="img-fluid"
+                            src="../assets/images/landing/testimonial/icon1.png" alt="icon-google" /></a></li>
+                      <li><a href="https://twitter.com/"><img class="img-fluid"
+                            src="../assets/images/landing/testimonial/icon2.png" alt="icon-google" /></a></li>
+                      <li><a href="https://www.facebook.com/"><img class="img-fluid"
+                            src="../assets/images/landing/testimonial/icon3.png" alt="icon-google" /></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            }
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="testimonial-back-content"><img class="img-fluid test-img2"
+          src="../assets/images/landing/testimonial/6.png" alt="testimonial" /></div>
+    </div>
+  </section>
+  <!-- testimonial end //-->
+  <!--app section start //-->
+  <section class="section-pb-space secure-app-main">
+    <div class="custom-container">
+      <div class="row">
+        <div class="col-xl-5 offset-xl-7 col-lg-5 offset-lg-7">
+          <div class="secure-app-content">
+            <div>
+              <div class="ply-main">
+                <div class="ply-content"><i class="ti-shield"></i></div>
+                <h3>Secure Your <span>Messages</span></h3>
+              </div>
+              <h1>The world's top secure App</h1>
+              <h4><span>Desktop App </span>– Easy to use our chat app, Attractive and clean design, with many Features
+                :- Dark & light, Recent Chat And many more....... </h4><a class="btn pricing-btn"
+                routerLink="/messenger">learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--app section end //-->
+  <!-- counter section  start//-->
+  <section class="counter-sec section-py-space counter-main">
+    <div class="container">
+      <div class="counter-title">
+        <h4 class="title-line">Counters</h4>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="counter-slider pt-0">
+            <owl-carousel-o [options]="customOptions">
+              @for (item of counters; track item) {
+              <ng-template carouselSlide>
+                <div class="item">
+                  <div class="counter-box-second">
+                    <div class="counter-box">
+                      <div><i class="counter-icon {{ item.icon }}"></i>
+                        <h6 class="counter-no count">{{ item.count }}</h6><span>{{ item.label }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+              }
+            </owl-carousel-o>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- counter section  end//-->
+</div>

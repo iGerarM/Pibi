@@ -1,0 +1,27 @@
+<ng-template #notesModal let-modal>
+ <div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title"><i class="ti-bookmark-alt"></i>notes</h2>
+     <button class="close" type="button" (click)="modal.dismiss('Cross click')">
+         <span aria-hidden="true">&times;</span>
+     </button>
+  </div>
+  <div class="modal-body custom-scroll p-0">
+    <div class="card">
+     <div class="card-header">
+        <h5>Inline Editor</h5>
+    </div>
+     <div class="card-body">
+      <div class="cke_editable cke_editable_inline cke_contents_ltr cke_show_borders">
+        <h1>Your title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at vulputate urna, sed dignissim arcu. Aliquam at ligula imperdiet, faucibus ante a, interdum enim. Sed in mauris a lectus lobortis condimentum. Sed in nunc magna. Quisque massa urna, cursus vitae commodo eget, rhoncus nec erat. Sed sapien turpis, elementum sit amet elit vitae, elementum gravida eros. In ornare tempus nibh ut lobortis. Nam venenatis justo ex, vitae vulputate neque laoreet a.</p>
+      </div>
+     </div>
+     <div class="card-footer">
+         <button class="btn btn-danger button-effect btn-sm" type="button" (click)="modal.dismiss('Cross click')">Save</button>
+         <button class="btn btn-primary button-effect btn-sm" type="button" (click)="modal.dismiss('Cross click')">Cancel</button>
+     </div>
+    </div>
+  </div>
+ </div>
+</ng-template>

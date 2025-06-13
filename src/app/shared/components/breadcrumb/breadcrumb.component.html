@@ -1,0 +1,11 @@
+<section class="breadcrumb-main">
+  <div class="custom-container">
+    <h2>{{ title }}</h2>
+    <ul>
+      @for (item of items; track item) {
+      <li><a routerLink="/messenger">{{ item }}</a></li>
+      }
+      <li><a class="text-white">{{ active_item }}</a></li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<ul class="chat-main">
+  @for (item of docItems; track item) {
+  <li>
+    <div class="chat-box">
+      <div class="media">
+        <div class="profile">
+          <a class="icon-btn btn-outline-{{ item.color }} btn-xl pull-right rounded15">
+            <i class="{{ item.icon }}"></i>
+          </a>
+        </div>
+        <div class="details">
+          <h5>{{ item.name }}</h5>
+          <h6>{{ item.date }}</h6>
+        </div>
+        <div class="media-body">
+          <a class="icon-btn btn-outline-light btn-sm pull-right" href="{{ item.link }}" target="_blank">
+            <i data-feather="download"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

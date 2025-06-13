@@ -1,0 +1,45 @@
+<div class="logo-warpper">
+  <!-- <a href="#"><img src="assets/images/logo/logo.png" alt="logo" /></a> -->
+</div>
+<div class="sidebar-main">
+  <!-- <ul class="sidebar-top">
+    @for (item of mainnav; track item;let i = $index) {
+    <li>
+      @if (item.type === 'status') {
+      <a [class.active]="item.isActive" (click)="setActiveItem(i)" class="button-effect" ngbTooltip="Status">
+        <div class="user-popup status one">
+          <div [ngStyle]="{'background-image': 'url(' + 'assets/images/avtar/2.jpg' + ')'}"
+            style="background-size: cover; background-position: center center; display: block;">
+          </div>
+        </div>
+      </a>
+      }
+      @if (item.type === 'sub') {
+      <a [class.active]="item.isActive" class="icon-btn btn-light button-effect" [ngbTooltip]="item.tooltip"
+        (click)="setActiveItem(i)">
+        <i class="fa fa-{{item.icon}}"></i>
+      </a>
+      }
+      @if (item.type === 'link') {
+      <div class="dot-btn dot-danger grow">
+        <a (click)="setActiveItem(i)" [class.active]="item.isActive" ngbTooltip="Notification"
+          class="icon-btn btn-light button-effect">
+          <i class="fa fa-{{item.icon}}"></i>
+        </a>
+      </div>
+      }
+    </li>
+    }
+  </ul> -->
+  <!-- <ul class="sidebar-bottom">
+    <li>
+      <a class="icon-btn btn-light button-effect mode" ngbTooltip="Theme Mode" (click)="layoutToggle()"
+        [ngClass]="dark ? 'dark-only' : ''">
+        <i class="fa" [ngClass]="dark ? 'fa-lightbulb-o' : 'fa-moon-o'"></i>
+      </a>
+    </li>
+    <li>
+      <app-login></app-login>
+    </li>
+  </ul> -->
+</div>

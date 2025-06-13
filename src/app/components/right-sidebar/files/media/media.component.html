@@ -1,0 +1,38 @@
+<div class="media-gallery portfolio-section grid-portfolio">
+  <div class="collapse-block" ngbAccordion [closeOthers]="true">
+    @for (block of blocks; track block) {
+    <div ngbAccordionItem [collapsed]="block.id !== '1'">
+      <hs class="block-title" ngbAccordionHeader>
+        <button class="sm ms-2" ngbAccordionButton>{{ block.date }}
+          <label class="badge badge-primary sm ms-2">{{ block.count }}</label>
+        </button>
+      </hs>
+      <div class="block-content" ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            <div class="row share-media zoom-gallery" itemscope="" gallerize>
+              @for (image of block.images; track image;let i = $index) {
+              <figure itemprop="associatedMedia" class="col-4 m-0">
+                <div class="isotopeSelector filter">
+                  <div [ngClass]="{'media-big': i === 0, 'media-small': i > 0}">
+                    <div class="overlay">
+                      <div class="border-portfolio">
+                        <a itemprop="contentUrl">
+                          <div class="overlay-background" (click)="lightbox.open(0)"><i class="ti-plus"
+                              aria-hidden="true"></i></div>
+                          <img class="img-fluid bg-img" [src]="image.srcUrl" alt="portfolio-image" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              }
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

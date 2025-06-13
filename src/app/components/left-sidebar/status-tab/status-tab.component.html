@@ -1,0 +1,53 @@
+<div class="my-status-box">
+  <div class="status-content">
+    <div class="media">
+      <div class="img-status">
+        <div class="user-status two p-0">
+          <img class="img-fluid bg-img" src="assets/images/avtar/girls.jpg" alt="status" />
+        </div>
+        <div class="upload-img">
+          <input type="file" />
+        </div>
+      </div>
+      <div class="media-body">
+        <h3>my status</h3>
+        <p>tap to add status Update</p>
+      </div>
+      <div>
+        <a class="icon-btn btn-outline-light btn-sm close-panel" (click)="handleClick()">
+          <app-feather-icons [icon]="'x'"></app-feather-icons>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="contact-status-box">
+  <div class="theme-title">
+    <h3>Recent Update</h3>
+  </div>
+  @for (item of status; track item) {
+  <div class="status-content">
+    <ul>
+      <li class="user-status">
+        <a class="lightbox img-status status" (click)="openVerticallyCentered(content, item.largeImg)"
+          [ngStyle]="{'background-image': 'url(' +  item.smallImg + ')'}"
+          style="background-size: cover; background-position: center center; display: block;">
+        </a>
+        <div class="lightbox-target" id="statusbox2">
+          <img src="{{ item.largeImg }}" alt="status" />
+          <a class="lightbox-close"></a>
+        </div>
+      </li>
+      <li>
+        <h5>{{ item.name }}</h5>
+        <p>{{ item.time }}</p>
+      </li>
+    </ul>
+  </div>
+  }
+</div>
+
+<ng-template #content let-modal>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  <img class="img-fluid bg-img" src="{{ image_status }}" alt="status" />
+</ng-template>

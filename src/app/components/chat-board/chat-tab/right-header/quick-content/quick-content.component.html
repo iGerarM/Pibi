@@ -1,0 +1,27 @@
+<a class="icon-btn btn-light bg-transparent button-effect outside" (click)="toggleContent()"  ngbTooltip="Quick action">
+  <i data-feather="more-vertical"></i>
+</a>
+<div class="chat-frind-content"[style.display]="isContentVisible ? 'block' : 'none'">
+  <ul>
+    <li>
+      <a class="icon-btn btn-outline-primary button-effect btn-sm" (click)="handleClick()">
+        <i data-feather="user"></i>
+      </a>
+      <h5>Profile</h5>
+    </li>
+    <li>
+      <a class="icon-btn btn-outline-danger button-effect btn-sm"  (click)="deleteModal.openModal()">
+        <i data-feather="trash-2"></i>
+      </a>
+      <h5>Delete</h5>
+      <app-delete-modal #deleteModal ></app-delete-modal>
+    </li>
+    <li>
+      <a class="icon-btn btn-outline-light button-effect btn-sm" (click)="blockModal.openModal()">
+        <i data-feather="slash"></i>
+      </a>
+      <h5>Block</h5>
+      <app-block-modal #blockModal></app-block-modal>
+    </li>
+  </ul>
+</div>

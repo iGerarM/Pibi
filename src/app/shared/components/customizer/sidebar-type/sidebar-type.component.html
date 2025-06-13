@@ -1,0 +1,12 @@
+<ul class="sidebar-type">
+    <li [class.active]="layoutService.config.sidebar_type === 'three-column'" (click)="toggleActive('three-column')">
+      <div class="sm-sidebar"></div>
+      <div class="sidebar"></div>
+      <div class="sidebar-content"></div>
+    </li>
+    <li [class.active]="layoutService.config.sidebar_type === 'two-column'" (click)="toggleActive('two-column')">
+      <div class="sidebar"></div>
+      <div class="sidebar-content"></div>
+    </li>
+</ul>
+  

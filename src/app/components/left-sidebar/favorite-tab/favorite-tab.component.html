@@ -1,0 +1,19 @@
+<div class="theme-title">
+  <div class="media">
+    <div>
+      <h2>Favourite</h2>
+      <h4>Last Recent</h4>
+    </div>
+    <div class="media-body text-end">
+     <app-search></app-search>
+      <a class="icon-btn btn-outline-light btn-sm m-r-15"(click)="openModal()">
+         <app-feather-icons [icon]="'plus'"></app-feather-icons>
+      </a>
+      <app-add-favorite #addFavorite></app-add-favorite>
+      <a class="icon-btn btn-outline-light btn-sm close-panel" (click)="handleClick()">
+        <i data-feather="x"></i>
+      </a>
+    </div>
+  </div>
+</div>
+<app-chat-main></app-chat-main>

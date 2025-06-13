@@ -1,0 +1,152 @@
+<!-- <div class="contact-details">
+  <div class="row">
+    <form class="form-inline search-form" [class.open]="open">
+      <div class="form-group">
+        <input class="form-control-plaintext" type="search" placeholder="Search.." [class.open]="open" />
+        <div class="icon-close close-search" (click)="closeSearch()"></div>
+      </div>
+    </form>
+    <div class="col-7">
+      <div class="media left">
+        <div class="media-left me-3">
+          <div class="profile {{activeChat.profileStatus}} menu-trigger"
+            [ngStyle]="{'background-image': 'url(' +  activeChat?.profileImage  + ')'}">
+          </div>
+        </div>
+        <div class="media-body">
+          <h5>{{ activeChat?.name }}</h5>
+          <div class="badge badge-{{ activeChat?.badge }}">{{ activeChat?.condition }}</div>
+        </div>
+        <div class="media-right">
+          <app-left-header></app-left-header>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <app-right-header></app-right-header>
+    </div>
+  </div>
+</div> -->
+<div class="contact-chat">
+  <ul class="chatappend">
+    @for (chat of chatData.chat; track $index) {
+    <li [ngClass]="chat.type === 'send' ? 'replies' : 'sent'">
+      <div class="media">
+        <div class="profile me-4" [ngStyle]="{'background-image': 'url(' + 'assets/images/contact/2.jpg' + ')'}"
+          style="background-size: cover; background-position: center center; display: block;">
+        </div>
+        <div class="media-body">
+          <div class="contact-name">
+            <h5>{{ chat.name }}</h5>
+            <h6>{{ chat.time }}</h6>
+            <ul class="msg-box">
+              @for (message of chat.messages; track $index) {
+              @if (message.message_type == 'massage') {
+              <li class="msg-setting-main">
+                <h5>{{message.message}}</h5>
+                <div class="badge sm ms-2" [ngClass]="[message.tag === 'R' ? 'badge-success' : '', 
+                                      message.tag === 'F' ? 'badge-danger' : '',  
+                                      message.tag === 'D' ? 'badge-dark' : '']">
+                  {{ message.tag }}</div>
+              </li>
+              } @else if (message.message_type == 'image') {
+              <li class="msg-setting-main">
+                <ul class="auto-gallery">
+                  <li
+                    style="background-image: url('assets/images/media/1.jpg'); background-size: cover; background-position: center center; display: block;">
+                  </li>
+                  <li
+                    style="background-image: url('assets/images/media/2.jpg'); background-size: cover; background-position: center center; display: block;">
+                  </li>
+                  <li
+                    style="background-image: url('assets/images/media/3.jpg'); background-size: cover; background-position: center center; display: block;">
+                  </li>
+                </ul>
+                <div class="refresh-block">
+                  <div class="badge badge-outline-primary refresh sm ms-2 p-1">
+                    <i data-feather="rotate-cw" class="me-0"></i>
+                  </div>
+                  <div class="badge sm ms-2" [ngClass]="[message.tag === 'R' ? 'badge-success' : '', 
+                                        message.tag === 'F' ? 'badge-danger' : '',  
+                                        message.tag === 'D' ? 'badge-dark' : '']">
+                    {{ message.tag }}</div>
+                </div>
+              </li>
+              }@else if (message.message_type == 'file') {
+              <li class="msg-setting-main">
+                <div class="document">
+                  <i class="fa fa-file-excel-o font-primary"></i>
+                  <div class="details">
+                    <h5>{{ message.file_name }}</h5>
+                    <h6>{{ message.file_size }}</h6>
+                  </div>
+                  <div class="icon-btns">
+                    <a class="icon-btn btn-outline-light" href="assets/doc/Document.xlsx" target="_blank"><i
+                        data-feather="download"> </i></a>
+                  </div>
+                </div>
+                <div class="badge sm ms-2" [ngClass]="[message.tag === 'R' ? 'badge-success' : '', 
+                                        message.tag === 'F' ? 'badge-danger' : '',  
+                                        message.tag === 'D' ? 'badge-dark' : '']">
+                  {{ message.tag }}</div>
+              </li>
+              }
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+    }
+  </ul>
+  <ul class="chatappend">
+    <li>
+      <div class="contact-chat">
+        <div class="rightchat animat-rate">
+          <div class="bg_circle">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="cross"></div>
+          <div class="cross1"></div>
+          <div class="cross2"></div>
+          <div class="dot"></div>
+          <div class="dot1"> </div>
+        </div>
+      </div>
+    </li>
+    @if (!chatData.chat.length) {
+    <li class="call-list-center">
+      <img src="assets/images/chat.png" alt="">
+      <div class="animated-bg"><i></i><i></i><i></i></div>
+      <p>Select a chat to read messages</p>
+    </li>
+    }
+    <li class="sent last typing-m" style="display: none;">
+      <div class="media">
+        <div class="profile me-4"
+          style="background-image: url(&quot;assets/images/contact/3.jpg&quot;); background-size: cover; background-position: center center; display: block;">
+        </div>
+        <div class="media-body">
+          <div class="contact-name">
+            <h5>Sufiya Elija</h5>
+            <ul class="msg-box">
+              <li>
+                <h5><span class="d-block type"><span class="d-block typing-loader"></span></span></h5>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

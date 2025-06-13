@@ -1,0 +1,21 @@
+<div class="card-header"id="headingTwo">
+  <a>Security<i class="fa fa-angle-down" (click)="toggle()"></i></a>
+</div>
+<div class="collapse" [class.show]="show">
+  <div class="card-body">
+    <div class="media">
+      <div class="media-body">
+        <h5>Show Security notification</h5>
+      </div>
+      <div class="media-right">
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        </div>      
+      </div>
+    </div>
+    <p>
+      <b>Note : </b>turn on this setting to receive notification when a contact's
+      security code has been changes.
+    </p>
+  </div>
+</div>

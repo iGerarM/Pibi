@@ -1,0 +1,22 @@
+<ng-template #audioModal let-modal>
+  <div class="modal-body p-0">
+    <div class="audiocall1 call-modal" style="background-image: url('assets/images/avtar/big/audiocall.jpg'); background-size: cover; background-position: center center; display: block;">
+      <div class="center-con text-center">
+        <div class="title2">Josephin water</div>
+        <h6>log angelina california</h6>
+        <ul>
+          <li>
+            <a class="icon-btn btn-success button-effect btn-xl is-animating" (click)="modal.dismiss('Cross click')">
+              <app-feather-icons [icon]="'phone'"></app-feather-icons>
+            </a>
+          </li>
+          <li>
+            <a class="icon-btn btn-danger button-effect btn-xl is-animating cancelcall" (click)="modal.dismiss('Cross click')">
+              <app-feather-icons [icon]="'phone'"></app-feather-icons>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-template>

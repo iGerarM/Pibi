@@ -1,0 +1,39 @@
+<div class="theme-tab tab-icon">
+   <ul class="nav nav-tabs" id="contactTab">
+      @for (callTabs of callTabs; track callTabs) {
+      <li class="nav-item">
+         <a class="nav-link" [class.active]="callTabs.active" (click)="toggleActiveTab(callTabs)"
+            id="{{ callTabs.id }}-callTabs">
+            @if (callTabs.text) {
+            {{ callTabs.text }}
+            } @else {
+            <i [attr.data-feather]="callTabs.icon"></i>
+            }
+         </a>
+      </li>
+      }
+   </ul>
+   @for (callTabs of callTabs; track callTabs) {
+   <div class="tab-content" id="contactTabContent">
+      @if (callTabs.id === 'con1') {
+      <div class="tab-pane fade show active" id="con1" [ngClass]="{'show active': callTabs.active}">
+         <app-all-calls></app-all-calls>
+      </div>
+      }
+      @if (callTabs.id === 'con2') {
+      <div class="tab-pane fade" id="con2" [ngClass]="{'show active': callTabs.active}">
+         <app-incoming-calls></app-incoming-calls>
+      </div>
+      }
+      @if (callTabs.id === 'con3') {
+      <div class="tab-pane fade" id="con3" [ngClass]="{'show active': callTabs.active}">
+         <app-outgoing-calls></app-outgoing-calls>
+      </div>
+      }
+      @if (callTabs.id === 'con4') {
+      <div class="tab-pane fade" id="con4" [ngClass]="{'show active': callTabs.active}">
+         <app-missed-calls></app-missed-calls>
+      </div>
+      }
+   </div>
+   }

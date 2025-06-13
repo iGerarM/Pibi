@@ -1,0 +1,39 @@
+<section class="section-py-space blog-page ratio2_3">
+  <ul class="page-decore">
+    <li class="top"><img class="img-fluid inner2" src="assets/images/landing/footer/2.png" alt="footer-back-img"></li>
+    <li class="bottom"><img class="img-fluid inner2" src="assets/images/landing/footer/2.png" alt="footer-back-img">
+    </li>
+  </ul>
+  <div class="custom-container">
+    <div class="row">
+      <div class="col-12 blog-list">
+        <div class="row blog-media">
+          @for (blogItem of blogItems; track blogItem) {
+          <div class="col-xl-6 blog-content-mb">
+            <div class="blog-side">
+              <div class="blog-left">
+                <a routerLink="/details">
+                  <img class="img-fluid" [src]="blogItem.image" alt="" />
+                </a>
+              </div>
+              <div class="blog-right">
+                <div>
+                  <h6>{{ blogItem.date }}</h6>
+                  <a routerLink="/details">
+                    <h4>{{ blogItem.title }}</h4>
+                  </a>
+                  <ul class="post-social">
+                    <li><i class="fa fa-user"></i> {{ blogItem.author }}</li>
+                    <li><i class="fa fa-comments"></i> {{ blogItem.comments }}</li>
+                  </ul>
+                  <p>{{ blogItem.content }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

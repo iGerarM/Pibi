@@ -1,0 +1,27 @@
+<ul class="chat-main">
+  @for (contact of contacts; track contact) {
+  <li>
+    <div class="chat-box">
+      <div class="media">
+        <div [ngClass]="{profile: true,offline: contact.status === 'offline',
+           online: contact.status === 'online',
+           busy: contact.status === 'busy',
+           unreachable: contact.status === 'unreachable'}"
+          [ngStyle]="{'background-image': 'url(' +  contact.avatar + ')'}">
+        </div>
+        <div class="details">
+          <h5>{{ contact.name }}</h5>
+          <h6>{{ contact.location }}</h6>
+        </div>
+        <div class="media-body">
+          <a class="icon-btn btn-sm pull-right favourite"
+            [ngClass]="{'btn-outline-primary': !contact.isFavourite,'btn-primary': contact.isFavourite}"
+            (click)="toggleFavourite(contact)">
+            <i data-feather="star"> </i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </li>
+  }
+</ul>

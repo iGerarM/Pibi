@@ -1,0 +1,19 @@
+@for (linkGroup of linkGroups; track linkGroup) {
+<div class="link-group">
+  <div class="media">
+    <i data-feather="link"></i>
+    <div class="media-body">
+      <h5 class="mt-0">{{ linkGroup.title }}</h5>
+      <h6>{{ linkGroup.time }}</h6>
+    </div>
+  </div>
+  <a [href]="linkGroup.link">{{ linkGroup.link }}</a>
+  <div class="media">
+    <img class="img-fluid" [src]="linkGroup.image" alt="media-img" />
+    <div class="media-body">
+      <h5>{{ linkGroup.description }}</h5>
+      <h6 class="mt-0">{{ linkGroup.subtitle }}</h6>
+    </div>
+  </div>
+</div>
+}

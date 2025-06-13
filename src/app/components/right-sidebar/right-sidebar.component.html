@@ -1,0 +1,74 @@
+<aside class="chitchat-right-sidebar" id="slide-menu">
+  <app-quick-profile></app-quick-profile>
+</aside>
+<aside class="app-sidebar" [class.active]="maniNavService.activeApp">
+  <div class="apps">
+    <ul class="apps-ul">
+      <li id="todo" [class.active]="tabActive('list')" class="overflow-y-auto custom-scroll">
+        <app-to-do></app-to-do>
+      </li>
+      <li id="files" [class.active]="tabActive('file')">
+        <app-files></app-files>
+      </li>
+      <li id="notes" [class.active]="tabActive('book')">
+        <app-notes></app-notes>
+      </li>
+      <li id="reminder" [class.active]="tabActive('clock')">
+        <app-reminder></app-reminder>
+      </li>
+    </ul>
+  </div>
+  <div class="app-list">
+    <ul class="app-list-ul custom-scroll">
+      <li class="title apps-toggle" (click)="maniNavService.closeApp()">
+        <i data-feather="grid"></i>
+        <h5>Apps</h5>
+      </li>
+      @for (item of appItems; track item ; let i = $index) {
+      <li>
+        <a class="icon-btn {{ item.class }} btn-sm button-effect" [class.active]="item.active"
+          (click)="toggleActive(i)">
+          <i attr.data-feather="{{ item.icon }}"></i>
+        </a>
+        <h5>{{ item.label }}</h5>
+      </li>
+      }
+      <li class="close-app">
+        <a class="icon-btn btn-danger" (click)="maniNavService.closeApp()">
+          <svg-icon src="assets/svg/close.svg"></svg-icon>
+        </a>
+        <h5>close</h5>
+      </li>
+    </ul>
+  </div>
+</aside>
+<!-- Theme Customizer Start -->
+<div class="sidebar-pannle-main">
+  <ul>
+    <li class="rtl-setting icon-btn btn-primary" [class.rtl]="this.layoutService.config.rtl" (click)="applyRTL()">{{
+      !this.layoutService.config.rtl ? 'RTL' : 'LTR' }}
+    </li>
+    <li class="cog-click icon-btn btn-success" (click)="toggleCustomizer()">
+      <i class="fa fa-cog"></i>
+    </li>
+  </ul>
+</div>
+<section class="setting-sidebar overflow-y-auto custom-scroll" [style.right.px]="Visible ? -400 : 0">
+  <div class="theme-title">
+    <div class="media">
+      <div>
+        <h2>customizer</h2>
+        <h4>Real Time Customize</h4>
+        <button class="btn btn-primary mt-2" (click)="ConfigurationModal.openModal()">configuration</button>
+      </div>
+      <div class="media-body">
+        <a class="icon-btn btn-outline-light button-effect pull-right cog-close" (click)="toggleCustomizer()">
+          <i class="fa fa-close"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <app-customizer></app-customizer>
+</section>
+<app-configuration-modal #ConfigurationModal></app-configuration-modal>
+<!-- Theme Customizer End -->
