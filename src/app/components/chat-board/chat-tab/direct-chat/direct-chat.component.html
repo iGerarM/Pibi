@@ -32,8 +32,8 @@
     @for (chat of chatData.chat; track $index) {
     <li [ngClass]="chat.type === 'send' ? 'replies' : 'sent'">
       <div class="media">
-        <div class="profile me-4" [ngStyle]="{'background-image': chat.type === 'send' ? 'url(assets/images/contact/mujer.png)' : 'url(assets/images/contact/chatbot.png)'}"
-          style="background-size: cover; background-position: center center; display: block;">
+        <div class="profile me-4" [ngStyle]="{'background-image': chat.type === 'send' ? 'url(assets/images/contact/mujer.png)' : 'url(assets/images/logo/icon_temporal_pibi_1.png)'}"
+          style="background-size: cover; background-position: center center; display: block; border-radius: 50%;">
         </div>
         <div class="media-body">
           <div class="contact-name">
@@ -126,9 +126,9 @@
     </li>
     @if (!chatData.chat.length) {
     <li class="call-list-center">
-      <img src="assets/images/chat.png" alt="">
-      <div class="animated-bg"><i></i><i></i><i></i></div>
-      <p style="text-align: center; margin-left: 20px; margin-top: 30px;">Hola, soy PiBi. <br> ¿En qué puedo ayudarte hoy?</p>
+      <img src="assets/images/logo/icon_temporal_pibi_1.png" alt="" style="width: 100px; height: 100px;">
+      <!-- <div class="animated-bg"><i></i><i></i><i></i></div> -->
+      <p style="text-align: center; margin-top: 30px;">Hola, soy PiBi. <br> ¿En qué puedo ayudarte hoy?</p>
     </li>
     }
     <li class="sent last typing-m" style="display: none;">
